@@ -13,19 +13,33 @@
   </head>
   <body>
     <div class="container">
+
+    <div class="col-md-12"><h2>ASUC approval</h2></div>
    
-    <div class="col-md-12">
-        <h2>ASUC approval</h2>
-        <h4>Do you think the ASUC is representative of the student body?</h4>
-    </div>
+    <div class="col-md-6">
+        <h4><a>Q2.8</a>: Do you agree or disagree with the following statement? <br>The ASUC is representative of the student body.</h4>
+    <div id="representative-asuc"></div></div>
+
 
     <div class="col-md-12">
-        <div id="representative-asuc"></div>
+        <hr>
+        <h4><a>Q1.15</a>: Do you think the candidates you voted for will carry out at least half of their promised platforms?</h4>
     </div>
+    <div class="col-md-4"><div id="platforms-asuc"></div></div>
+    <div class="col-md-4"><div id="platforms-year"></div></div>
+    <div class="col-md-4"><div id="platforms-party"></div></div>
 
     <div class="col-md-12">
+        <hr>
+        <h4><a>Q2.7</a>: Do you think the ASUC should shift its attention towards:</h4>
+    </div>
+    <div class="col-md-4"><div id="attention-asuc"></div></div>
+
+
+
+    <div class="col-md-12">
+        <hr>
         <h4>How often can you trust each of the following to do what is right?</h4>
-        
     </div>
 
     <div class="col-md-6">
@@ -62,6 +76,38 @@
         var pymParent = new pym.Parent(
             'trust-senate',
             './trust-senate/trust-senate.html',
+            {}
+        );
+    });
+
+    $(function() {
+        var pymParent = new pym.Parent(
+            'platforms-asuc',
+            './platforms-asuc/platforms-asuc.html',
+            {}
+        );
+    });
+
+    $(function() {
+        var pymParent = new pym.Parent(
+            'platforms-year',
+            './platforms-year/platforms-year.html',
+            {}
+        );
+    });
+
+    $(function() {
+        var pymParent = new pym.Parent(
+            'platforms-party',
+            './platforms-party/platforms-party.html',
+            {}
+        );
+    });
+
+    $(function() {
+        var pymParent = new pym.Parent(
+            'attention-asuc',
+            './attention-asuc/attention-asuc.html',
             {}
         );
     });
