@@ -3,7 +3,7 @@ var $graphic = null;
 var pymChild = null;
 
 var SIZE = 35;
-var HORIZONTAL_GAP = 20;
+var HORIZONTAL_GAP = 10;
 var Y_OFFSET = 20;
 var BAR_GAP = 10;
 var BAR_GAP_INNER = 2;
@@ -280,7 +280,8 @@ var drawGraph = function(graphicWidth) {
         .enter().append('li')
             .attr('style', function(d,i) {
                 var s = '';
-                s += 'width: ' + (margin['left']) + 'px; ';
+                //s += 'width: ' + (margin['left']) + 'px; ';
+                s += 'width: ' + SIZE + 'px; ';
                 s += 'height: ' + SIZE + 'px; ';
                 s += 'left: ' + (LABEL_WIDTH + 5 + ((SIZE + HORIZONTAL_GAP) * (i))) + 'px; ';
                 s += 'top: 0px; ';
