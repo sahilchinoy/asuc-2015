@@ -38,6 +38,10 @@
         <div id="party-lgbt"></div>
     </div>
 
+    <div class="col-md-6">
+        <div id="party-greek"></div>
+    </div>
+
     </div>
 <script src="lib/pym.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -84,6 +88,14 @@
         var pymParent = new pym.Parent(
             'party-lgbt',
             './party-lgbt/party-lgbt.html',
+            {}
+        );
+    });
+
+    $(function() {
+        var pymParent = new pym.Parent(
+            'party-greek',
+            './party-greek/party-greek.html',
             {}
         );
     });
