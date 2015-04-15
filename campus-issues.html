@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Election Survey | The Daily Californian</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <script src="lib/jquery.min.js"></script>
+
+  </head>
+  <body>
+    <div class="container">
+   
+    <div class="col-md-12">
+        <h2>Campus issues</h2>
+        <p>Intro text goes here</p>
+        <hr>
+        <h4><a>Q2.1</a>: Rank the following campus issues in order of which you find most pressing.</h4>
+    </div>
+
+    <div class="col-md-12">
+        <div id="issues-table"></div>
+    </div>
+
+    <div class="col-md-12">
+        <hr>
+        <h4><a>Q2.4</a>: How much do you trust the campus administration to effectively handle cases of sexual assault?</h4>
+    </div>
+
+    <div class="col-md-5 vdown" id="gender"><h5>Gender</h5>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</div>
+    <div class="col-md-6 col-md-offset-1"><div id="sa-gender"></div></div>
+
+    <div class="col-md-5 vdown" id="greek"><h5>Greek life</h5>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</div>
+    <div class="col-md-6 col-md-offset-1"><div id="sa-greek"></div></div>
+
+    <div class="col-md-5 vdown" id="lgbt"><h5>LGBT</h5>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</div>
+    <div class="col-md-6 col-md-offset-1"><div id="sa-lgbt"></div></div>
+
+    <div class="col-md-12">
+        <hr>
+        <h4><a>Q2.2</a>: Do you think the university's tuition and fees are fair to students?</h4>
+    </div>
+
+    <div class="col-md-5 vdown" id="lgbt"><h5>LGBT</h5>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</div>
+    <div class="col-md-6 col-md-offset-1"><div id="tuition-political"></div></div>
+
+    <div class="col-md-5 vdown" id="lgbt"><h5>LGBT</h5>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</div>
+    <div class="col-md-6 col-md-offset-1"><div id="tuition-party"></div></div>
+
+    <div class="col-md-5 vdown" id="lgbt"><h5>LGBT</h5>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</div>
+    <div class="col-md-6 col-md-offset-1"><div id="tuition-aid"></div></div>
+
+    <div class="col-md-12">
+        <hr>
+        <h4><a>Q2.5</a>: How often has UC Berkeley's campus climate made <strong>you personally</strong> feel unwelcome or uncomfortable?</h4>
+    </div>
+
+    <div class="col-md-5 vdown" id="lgbt"><h5>Gender</h5>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</div>
+    <div class="col-md-6 col-md-offset-1"><div id="Q2-5-gender"></div></div>
+
+    <div class="col-md-5 vdown" id="lgbt"><h5>LGBT</h5>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</div>
+    <div class="col-md-6 col-md-offset-1"><div id="Q2-5-lgbt"></div></div>
+
+
+    </div>
+    <script src="lib/pym.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+    $(function() {
+        var pymParent = new pym.Parent(
+            'issues-table',
+            './issues-table/issues-table.html',
+            {}
+        );
+    });
+
+    $(function() {
+        var pymParent = new pym.Parent(
+            'sa-gender',
+            './sa-gender/sa-gender.html',
+            {}
+        );
+    });
+
+    $(function() {
+        var pymParent = new pym.Parent(
+            'sa-greek',
+            './sa-greek/sa-greek.html',
+            {}
+        );
+    });
+
+     $(function() {
+        var pymParent = new pym.Parent(
+            'sa-lgbt',
+            './sa-lgbt/sa-lgbt.html',
+            {}
+        );
+    });
+
+    $(function() {
+        var pymParent = new pym.Parent(
+            'tuition-political',
+            './tuition-political/tuition-political.html',
+            {}
+        );
+    });
+
+    $(function() {
+        var pymParent = new pym.Parent(
+            'tuition-party',
+            './tuition-party/tuition-party.html',
+            {}
+        );
+    });
+
+    $(function() {
+        var pymParent = new pym.Parent(
+            'tuition-aid',
+            './tuition-aid/tuition-aid.html',
+            {}
+        );
+    });
+
+    $(function() {
+        var pymParent = new pym.Parent(
+            'Q2-5-lgbt',
+            'charts/Q2-5-lgbt/Q2-5-lgbt.html',
+            {}
+        );
+    });
+
+    $(function() {
+        var pymParent = new pym.Parent(
+            'Q2-5-gender',
+            'charts/Q2-5-gender/Q2-5-gender.html',
+            {}
+        );
+    });
+
+</script>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+  </body>
+</html>
