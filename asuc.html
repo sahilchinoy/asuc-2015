@@ -8,30 +8,47 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
   </head>
   <body>
     <div class="container">
 
-    <div class="col-md-12"><h2>ASUC approval</h2></div>
-   
-    <div class="col-md-6">
-        <h4><a>Q2.8</a>: Do you agree or disagree with the following statement? <br>The ASUC is representative of the student body.</h4>
-    <div id="representative-asuc"></div></div>
-
-
     <div class="col-md-12">
-        <hr>
-        <h4><a>Q1.15</a>: Do you think the candidates you voted for will carry out at least half of their promised platforms?</h4>
+        <h2>ASUC approval</h2>
+        <p>Intro text here</p>
     </div>
-    <div class="col-md-4"><div id="platforms-asuc"></div></div>
-    <div class="col-md-4"><div id="platforms-year"></div></div>
-    <div class="col-md-4"><div id="platforms-party"></div></div>
+
+    <div class="col-md-12" id="Q1-15">
+        <hr>
+        <h4><a>Q1.15</a> &nbsp; Do you think the candidates you voted for will carry out at least half of their promised platforms?</h4>
+    </div>
+
+    <div class="col-md-5 vdown"><h5>ASUC involvement</h5>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</div>
+    <div class="col-md-6 col-md-offset-1"><div id="Q1-15-asuc"></div></div>
+
+    <div class="col-md-5 vdown"><h5>Year</h5>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</div>
+    <div class="col-md-6 col-md-offset-1"><div id="Q1-15-year"></div></div>
+
+    <div class="col-md-5 vdown"><h5>Party</h5>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</div>
+    <div class="col-md-6 col-md-offset-1"><div id="Q1-15-party"></div></div>
+
+
+   
+    <div class="col-md-12" id="Q2-8">
+        <hr>
+        <h4><a>Q2.8</a> &nbsp; Do you agree or disagree with the following statement? The ASUC is representative of the student body.</h4>
+    </div>
+    <div class="col-md-5 vdown"><h5>ASUC</h5>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</div>
+    <div class="col-md-6 col-md-offset-1"><div id="representative-asuc"></div></div>
+
+
+    
 
     <div class="col-md-12">
         <hr>
-        <h4><a>Q2.7</a>: Do you think the ASUC should shift its attention towards:</h4>
+        <h4><a>Q2.7</a> &nbsp; Do you think the ASUC should shift its attention towards:</h4>
     </div>
     <div class="col-md-4"><div id="attention-asuc"></div></div>
 
@@ -82,24 +99,24 @@
 
     $(function() {
         var pymParent = new pym.Parent(
-            'platforms-asuc',
-            './platforms-asuc/platforms-asuc.html',
+            'Q1-15-asuc',
+            'charts/Q1-15-asuc/Q1-15-asuc.html',
             {}
         );
     });
 
     $(function() {
         var pymParent = new pym.Parent(
-            'platforms-year',
-            './platforms-year/platforms-year.html',
+            'Q1-15-year',
+            'charts/Q1-15-year/Q1-15-year.html',
             {}
         );
     });
 
     $(function() {
         var pymParent = new pym.Parent(
-            'platforms-party',
-            './platforms-party/platforms-party.html',
+            'Q1-15-party',
+            'charts/Q1-15-party/Q1-15-party.html',
             {}
         );
     });

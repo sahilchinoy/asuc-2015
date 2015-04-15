@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Election Survey | The Daily Californian</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  </head>
+  <body>
+    <div class="container">
+
+    <div class="col-md-12">
+        <h2>Campaigning methods</h2>
+        <p>Intro text here</p>
+    </div>
+
+    <div class="col-md-12" id="Q1-4">
+        <hr>
+        <h4><a>Q1.4</a> &nbsp; How did you find out about your first-choice candidate for president?</h4>
+    </div>
+
+    <div class="col-md-5 vdown"><h5>ASUC involvement</h5>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</div>
+    <div class="col-md-6 col-md-offset-1"><div id="Q1-4-candidate"></div></div>
+
+
+   
+
+    </div>
+    <script src="lib/pym.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+    $(function() {
+        var pymParent = new pym.Parent(
+            'Q1-4-candidate',
+            'charts/Q1-4-candidate/Q1-4-candidate.html',
+            {}
+        );
+    });
+
+</script>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+  </body>
+</html>
