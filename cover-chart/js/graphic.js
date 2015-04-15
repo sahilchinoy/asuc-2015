@@ -2,10 +2,14 @@
 var $graphic = null;
 var pymChild = null;
 
+var BAR_HEIGHT = 40;
+var BAR_GAP = 20;
 var GRAPHIC_DATA_URL = 'data.csv';
 var GRAPHIC_DEFAULT_WIDTH = 600;
+var LABEL_MARGIN = 6;
+var LABEL_WIDTH = 85;
 var MOBILE_THRESHOLD = 500;
-var VALUE_MIN_HEIGHT = 20;
+var VALUE_MIN_WIDTH = 30;
 
 var colors = {
     'red1': '#6C2315', 'red2': '#A23520', 'red3': '#D8472B', 'red4': '#E27560', 'red5': '#ECA395', 'red6': '#F5D1CA',
@@ -14,7 +18,7 @@ var colors = {
     'teal1': '#0B403F', 'teal2': '#11605E', 'teal3': '#17807E', 'teal4': '#51A09E', 'teal5': '#8BC0BF', 'teal6': '#C5DFDF',
     'blue1': '#28556F', 'blue2': '#3D7FA6', 'blue3': '#51AADE', 'blue4': '#7DBFE6', 'blue5': '#A8D5EF', 'blue6': '#D3EAF7'
 };
-var graphicData = null;
+var graphicData;
 var isMobile = false;
 
 // D3 formatters
@@ -35,7 +39,6 @@ var onWindowLoaded = function() {
 
             graphicData.forEach(function(d) {
                 d['amt'] = +d['amt'];
-                d['label'] = d['label'];
             });
 
             pymChild = new pym.Child({
@@ -52,8 +55,6 @@ var onWindowLoaded = function() {
  * RENDER THE GRAPHIC
  */
 var render = function(containerWidth) {
-    var graphicWidth;
-
     // fallback if page is loaded outside of an iframe
     if (!containerWidth) {
         containerWidth = GRAPHIC_DEFAULT_WIDTH;
@@ -84,140 +85,83 @@ var render = function(containerWidth) {
  * DRAW THE GRAPH
  */
 var drawGraph = function(graphicWidth) {
-    var aspectHeight = 9;
-    var aspectWidth = 16;
-    if (isMobile) {
-        aspectHeight = 3;
-        aspectWidth = 4;
-    }
-    var margin = {  
-        top: 5, 
-        right: 5, 
-        bottom: 20, 
-        left: 30
+    var graph = d3.select('#graphic');
+    var margin = {
+        top: 0,
+        right: 15,
+        bottom: 20,
+        left: (LABEL_WIDTH + LABEL_MARGIN)
     };
-    var ticksY = 4;
+    var numBars = graphicData.length;
+    var ticksX = 4;
+
+    // define chart dimensions
     var width = graphicWidth - margin['left'] - margin['right'];
-    var height = Math.ceil((width * aspectHeight) / aspectWidth) - margin['top'] - margin['bottom'];
-    
-    var x = d3.scale.ordinal()
-        .rangeRoundBands([0, width], .1)
-        .domain(graphicData.map(function (d) {
-            return d['label'];
-        }));
-    
+    var height = ((BAR_HEIGHT + BAR_GAP) * numBars);
+
+    var x = d3.scale.linear()
+        .domain([ 0, d3.max(graphicData, function(d) {
+            return Math.ceil(d['amt']/5) * 5; // round to next 5
+        }) ])
+        .range([0, width]);
+
     var y = d3.scale.linear()
-        .domain([ 0, 12])
-        .range([height, 0]);
-    
+        .range([ height, 0 ]);
+
+    // define axis and grid
     var xAxis = d3.svg.axis()
         .scale(x)
         .orient('bottom')
-        .tickFormat(function(d,i) {
-            var y;
-            if (isMobile) {
-                y = d;
-            } else {
-                y = d;
-            }
-            return y;
-        });
-    
-    var yAxis = d3.svg.axis()
-        .scale(y)
-        .orient('left')
-        .ticks(ticksY)
+        .ticks(ticksX)
         .tickFormat(function(d) {
-            return fmtComma(d);
+            return '';
         });
 
-    var y_axis_grid = function() { return yAxis; }
-    
-    // draw the chart itself
-    var svg = d3.select('#graphic').append('svg')
+    var xAxisGrid = function() {
+        return xAxis;
+    }
+
+    // draw the chart
+    var svg = graph.append('svg')
         .attr('width', width + margin['left'] + margin['right'])
         .attr('height', height + margin['top'] + margin['bottom'])
         .append('g')
-            .attr('transform', 'translate(' + margin['left'] + ',' + margin['top'] + ')');
+        .attr('transform', 'translate(' + margin['left'] + ',' + margin['top'] + ')');
 
+    // x-axis (bottom)
     svg.append('g')
         .attr('class', 'x axis')
         .attr('transform', 'translate(0,' + height + ')')
         .call(xAxis);
 
+    // x-axis gridlines
     svg.append('g')
-        .attr('class', 'y axis')
-        .call(yAxis);
-        
-    svg.append('g')
-        .attr('class', 'y grid')
-        .call(y_axis_grid()
-            .tickSize(-width, 0)
+        .attr('class', 'x grid')
+        .attr('transform', 'translate(0,' + height + ')')
+        .call(xAxisGrid()
+            .tickSize(-height, 0, 0)
             .tickFormat('')
         );
 
+    // draw the bars
     svg.append('g')
         .attr('class', 'bars')
         .selectAll('rect')
             .data(graphicData)
         .enter().append('rect')
-            .attr('x', function(d) {
-                return x(d['label']);
+            .attr('y', function(d, i) {
+                return i * (BAR_HEIGHT + BAR_GAP);
             })
-            .attr('y', function(d) {
-                if (d['amt'] < 0) { 
-                    return y(0);
-                } else {
-                    return y(d['amt']);
-                }
+            .attr('width', function(d){
+                return x(d['amt']);
             })
-            .attr('width', x.rangeBand())
-            .attr('height', function(d){ 
-                if (d['amt'] < 0) { 
-                    return y(d['amt']) - y(0);
-                } else {
-                    return y(0) - y(d['amt']);
-                }
-            })
-            .attr('class', function(d) {
-                return 'bar bar-' + d['label'];
+            .attr('height', BAR_HEIGHT)
+            .attr('class', function(d, i) {
+                return 'bar-' + i + ' ' + classify(d['label']);
             });
-    
-    svg.append('line')
-        .attr('class', 'y grid grid-0')
-        .attr('x1', 0)
-        .attr('x2', width)
-        .attr('y1', y(0))
-        .attr('y2', y(0));
 
-    svg.append('g')
-        .attr('class', 'value')
-        .selectAll('text')
-            .data(graphicData)
-        .enter().append('text')
-            .attr('x', function(d, i) { 
-                return x(d['label']) + (x.rangeBand() / 2);
-            })
-            .attr('y', function(d) { 
-                if (height - y(d['amt']) > VALUE_MIN_HEIGHT) {
-                    return y(d['amt']) + 15;
-                } else {
-                    return y(d['amt']) - 6;
-                }
-            })
-            .attr('text-anchor', 'middle')
-            .attr('class', function(d) { 
-                var c = classify('y-' + d['label']);
-                 if (height - y(d['amt']) > VALUE_MIN_HEIGHT) {
-                    c += ' in';
-                } else {
-                    c += ' out';
-                }
-               return c;
-            })
-            .text(function(d) { 
-                return d['amt'].toFixed(0);
-            });
+    
+    
 }
 
 
