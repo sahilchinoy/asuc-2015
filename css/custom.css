@@ -3,3 +3,36 @@
         margin-top:38px;
     }
 }
+
+.sa {
+	background-color: rgba(31,120,180,0.5);
+}
+
+.cs {
+	background-color: rgba(178,223,138,0.5);
+}
+
+.sq {
+	background-color: rgba(251,154,153,0.5);
+}
+
+.cr {
+	background-color: rgba(253,191,111,0.5);
+}
+
+.jb {
+	background-color: rgba(202,178,214,0.5);
+}
+
+.cm {
+	background-color: rgba(51,160,44,0.5);
+}
+
+table {
+	font-size: 9pt;
+}
+
+table td {
+	color: #666;
+	-webkit-font-smoothing: antialiased;
+}
