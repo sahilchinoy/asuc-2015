@@ -90,7 +90,7 @@ var drawGraph = function(graphicWidth) {
         top: 0,
         right: 15,
         bottom: 20,
-        left: (LABEL_WIDTH + LABEL_MARGIN)
+        left: 15
     };
     var numBars = graphicData.length;
     var ticksX = 4;
