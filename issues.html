@@ -16,10 +16,10 @@
     <div class="container">
    
     <div class="col-md-12">
-        <h2>Campus issues</h2>
+        <h2>Campus & university issues</h2>
         <p>Intro text goes here</p>
         <hr>
-        <h4><a>Q2.1</a>: Rank the following campus issues in order of which you find most pressing.</h4>
+        <h4><a href="survey.html#Q2-1" target="_blank">Q2.1</a> &nbsp; Rank the following campus issues in order of which you find most pressing.</h4>
     </div>
 
     <div class="col-md-12">
@@ -28,7 +28,21 @@
 
     <div class="col-md-12">
         <hr>
-        <h4><a>Q2.4</a>: How much do you trust the campus administration to effectively handle cases of sexual assault?</h4>
+        <h4><a href="survey.html#Q2-2" target="_blank">Q2.2</a> &nbsp; Do you think the university's tuition and fees are fair to students?</h4>
+    </div>
+
+    <div class="col-md-5 vdown"><h5>Political affiliation</h5>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</div>
+    <div class="col-md-6 col-md-offset-1"><div id="Q2-2-political"></div></div>
+
+    <div class="col-md-5 vdown"><h5>Party</h5>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</div>
+    <div class="col-md-6 col-md-offset-1"><div id="Q2-2-party"></div></div>
+
+    <div class="col-md-5 vdown"><h5>Financial aid</h5>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</div>
+    <div class="col-md-6 col-md-offset-1"><div id="Q2-2-aid"></div></div>
+
+    <div class="col-md-12">
+        <hr>
+        <h4><a href="survey.html#Q2-4" target="_blank">Q2.4</a> &nbsp; How much do you trust the campus administration to effectively handle cases of sexual assault?</h4>
     </div>
 
     <div class="col-md-5 vdown" id="gender"><h5>Gender</h5>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</div>
@@ -40,19 +54,7 @@
     <div class="col-md-5 vdown" id="lgbt"><h5>LGBT</h5>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</div>
     <div class="col-md-6 col-md-offset-1"><div id="sa-lgbt"></div></div>
 
-    <div class="col-md-12">
-        <hr>
-        <h4><a>Q2.2</a>: Do you think the university's tuition and fees are fair to students?</h4>
-    </div>
-
-    <div class="col-md-5 vdown" id="lgbt"><h5>LGBT</h5>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</div>
-    <div class="col-md-6 col-md-offset-1"><div id="tuition-political"></div></div>
-
-    <div class="col-md-5 vdown" id="lgbt"><h5>LGBT</h5>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</div>
-    <div class="col-md-6 col-md-offset-1"><div id="tuition-party"></div></div>
-
-    <div class="col-md-5 vdown" id="lgbt"><h5>LGBT</h5>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</div>
-    <div class="col-md-6 col-md-offset-1"><div id="tuition-aid"></div></div>
+    
 
     <div class="col-md-12">
         <hr>
@@ -113,24 +115,24 @@
 
     $(function() {
         var pymParent = new pym.Parent(
-            'tuition-political',
-            './tuition-political/tuition-political.html',
+            'Q2-2-political',
+            'charts/Q2-2-political/Q2-2-political.html',
             {}
         );
     });
 
     $(function() {
         var pymParent = new pym.Parent(
-            'tuition-party',
-            './tuition-party/tuition-party.html',
+            'Q2-2-party',
+            'charts/Q2-2-party/Q2-2-party.html',
             {}
         );
     });
 
     $(function() {
         var pymParent = new pym.Parent(
-            'tuition-aid',
-            './tuition-aid/tuition-aid.html',
+            'Q2-2-aid',
+            'charts/Q2-2-aid/Q2-2-aid.html',
             {}
         );
     });
