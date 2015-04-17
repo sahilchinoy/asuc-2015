@@ -9,10 +9,29 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="lib/jquery.min.js"></script>
 
   </head>
   <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Voter Survey 2015</a>
+            </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#">Introduction</a></li>
+            <li><a href="candidates.html">Candidates & campaigning</a></li>
+            <li><a href="issues.html">Campus & university issues</a></li>
+            <li class="active"><a href="asuc.html">ASUC approval</a></li>
+            <li><a href="party.html">Party demographics</a></li>
+            <li><a href="survey.html">Full survey</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+
+
     <div class="container">
 
     <div class="col-md-12">
@@ -22,16 +41,16 @@
 
     <div class="col-md-12" id="Q1-15">
         <hr>
-        <h4><a>Q1.15</a> &nbsp; Do you think the candidates you voted for will carry out at least half of their promised platforms?</h4>
+        <h4><a href="survey.html#Q1-15" target="_blank">Q1.15</a> &nbsp; Do you think the candidates you voted for will carry out at least half of their promised platforms?</h4>
     </div>
 
-    <div class="col-md-5 vdown"><h5>ASUC involvement</h5>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</div>
+    <div class="col-md-5 vdown"><h5>ASUC involvement</h5><p>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</p></div>
     <div class="col-md-6 col-md-offset-1"><div id="Q1-15-asuc"></div></div>
 
-    <div class="col-md-5 vdown"><h5>Year</h5>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</div>
+    <div class="col-md-5 vdown"><h5>Year</h5><p>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</p></div>
     <div class="col-md-6 col-md-offset-1"><div id="Q1-15-year"></div></div>
 
-    <div class="col-md-5 vdown"><h5>Party</h5>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</div>
+    <div class="col-md-5 vdown"><h5>Party</h5><p>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</p></div>
     <div class="col-md-6 col-md-offset-1"><div id="Q1-15-party"></div></div>
 
 
@@ -40,17 +59,15 @@
         <hr>
         <h4><a>Q2.8</a> &nbsp; Do you agree or disagree with the following statement? The ASUC is representative of the student body.</h4>
     </div>
-    <div class="col-md-5 vdown"><h5>ASUC</h5>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</div>
-    <div class="col-md-6 col-md-offset-1"><div id="representative-asuc"></div></div>
-
-
-    
+    <div class="col-md-5 vdown"><h5>ASUC involvement</h5><p>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</p></div>
+    <div class="col-md-6 col-md-offset-1"><div id="Q2-8-asuc"></div></div>
 
     <div class="col-md-12">
         <hr>
-        <h4><a>Q2.7</a> &nbsp; Do you think the ASUC should shift its attention towards:</h4>
+        <h4><a href="survey.html#Q2-7" target="_blank">Q2.7</a> &nbsp; Do you think the ASUC should shift its attention towards:</h4>
     </div>
-    <div class="col-md-4"><div id="attention-asuc"></div></div>
+    <div class="col-md-5 vdown"><h5>ASUC involvement</h5><p>While our results showed that women represented the majority of each party’s constituency, respondents who identified with Student Action were more likely to be male than supporters of any other party. In contrast, 64 percent of respondents who identified as CalSERVE also identified as female.</p></div>
+    <div class="col-md-6 col-md-offset-1"><div id="Q2-7-asuc"></div></div>
 
 
 
@@ -75,8 +92,8 @@
 
     $(function() {
         var pymParent = new pym.Parent(
-            'representative-asuc',
-            './representative-asuc/representative-asuc.html',
+            'Q2-8-asuc',
+            'charts/Q2-8-asuc/Q2-8-asuc.html',
             {}
         );
     });
@@ -121,13 +138,14 @@
         );
     });
 
-    $(function() {
+     $(function() {
         var pymParent = new pym.Parent(
-            'attention-asuc',
-            './attention-asuc/attention-asuc.html',
+            'Q2-7-asuc',
+            'charts/Q2-7-asuc/Q2-7-asuc.html',
             {}
         );
     });
+
 
 </script>
 

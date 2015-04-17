@@ -39,4 +39,10 @@ table td {
 
 p {
 	font-family: Georgia;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 2000px;
+  padding-top: 70px;
 }
