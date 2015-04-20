@@ -1,13 +1,13 @@
-Group,Student Action,CalSERVE,None
+Group,CalSERVE,Student Action,None
 All responses,19.70,36.40,43.90
-Arts & Hum.,10,50,40
-Biological Sci.,21.05,32.89,46.05
-Business,41.94,32.26,25.81
-CS & EECS,20.62,19.59,59.79
-Economics,17.50,32.50,50
-Engineering,17.65,26.47,55.88
-Math & Physical Sci.,20.50,35.29,44.12
-Nat. Res.,15,45,40
-Political Sci.,23.40,59.57,17.02
-Social Sci.,16.67,47.62,35.71
-Undergraduate Studies,15.25,45.76,38.98
+Arts & Hum.,50,10,40
+Biological Sci.,32.89,21.05,46.05
+Business,32.26,41.94,25.81
+CS & EECS,19.59,20.62,59.79
+Economics,32.50,17.50,50
+Engineering,26.47,17.65,55.88
+Math & Physical Sci.,35.29,20.50,44.12
+Nat. Res.,45,15,40
+Political Sci.,59.57,23.40,17.02
+Social Sci.,47.62,16.67,35.71
+Undergraduate Studies,45.76,15.25,38.98
