@@ -10,6 +10,20 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
     <script src="lib/jquery.min.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+      fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+    </script>
 
   </head>
   <body>
@@ -17,16 +31,30 @@
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Voter Survey 2015</a>
+                <ul class="nav navbar-nav">
+                <li><a href="http://www.dailycal.org/"><img src="logo.png" style="width:200px; margin-top: -5px; margin-right:0px"></a></li>
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="color:black"><strong>Voter Survey 2015 <span class="caret"></span></strong></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="candidates.html">Introduction</a></li>
+                    <li ><a href="candidates.html">Candidates & campaigning</a></li>
+                    <li><a href="issues.html">Campus & university issues</a></li>
+                    <li class="active"><a href="asuc.html">ASUC approval</a></li>
+                    <li ><a href="party.html">Party demographics</a></li>
+                    <li><a href="survey.html">Full survey</a></li>
+                 </ul>
+            </li>
+        </ul>
             </div>
+
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="#">Introduction</a></li>
-            <li><a href="candidates.html">Candidates & campaigning</a></li>
-            <li class="active"><a href="issues.html">Campus & university issues</a></li>
-            <li><a href="asuc.html">ASUC approval</a></li>
-            <li><a href="party.html">Party demographics</a></li>
-            <li><a href="survey.html">Full survey</a></li>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li style="margin-top:15px;"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://votersurvey.dailycal.org/2015" data-text="Voter Survey 2015 | The Daily Californian" data-via="dailycal" data-hashtags="votersurvey">Tweet</a></li>
+
+            <li style="margin-top:15px;"><div class="fb-like" data-href="http://www.votersurvey.dailycal.org/2015" data-layout="button_count" data-action="recommend" data-show-faces="false" data-share="false"></div></li>
+            
           </ul>
         </div><!--/.nav-collapse -->
         </div>
@@ -41,8 +69,12 @@
         <h4><a href="survey.html#Q2-1" target="_blank">Q2.1</a> &nbsp; Rank the following campus issues in order of which you find most pressing.</h4>
     </div>
 
-    <div class="col-md-12">
-        <div id="issues-table"></div>
+    <div class="col-md-12 hidden-xs">
+        <div id="Q2-1-table"></div>
+    </div>
+
+    <div class="col-md-12 visible-xs">
+        <p>Please view this site on a computer to display an interactive visualization of campus issues by demographic.</p>
     </div>
 
     <div class="col-md-12">
@@ -117,8 +149,8 @@
 
     $(function() {
         var pymParent = new pym.Parent(
-            'issues-table',
-            './issues-table/issues-table.html',
+            'Q2-1-table',
+            'charts/Q2-1-table/Q2-1-table.html',
             {}
         );
     });

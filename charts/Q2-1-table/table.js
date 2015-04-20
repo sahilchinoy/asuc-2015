@@ -25,8 +25,6 @@ var legend_labels = {
     'Divestment':'V'
 };
 
-
-
 var colors = {
     'A': 0,
     'T': 1,
@@ -52,7 +50,6 @@ var isMobile = false;
 var fmtComma = d3.format(',');
 var fmtYearAbbrev = d3.time.format('%y');
 var fmtYearFull = d3.time.format('%Y');
-
 
 /*
  * Initialize
@@ -132,12 +129,21 @@ var drawGraph = function(graphicWidth) {
     };
     var numGroups = graphicData.length;
     var numGroupBars = graphicData[0]['value'].length;
-    var groupHeight = SIZE;
+    
     var ticksX = 7;
 
     // define chart dimensions
     var width = graphicWidth - margin['left'] - margin['right'];
-    var height = ((SIZE + BAR_GAP) * numGroups) - BAR_GAP + BAR_GAP_INNER;
+    
+
+    var box_size = (width / 23) - HORIZONTAL_GAP;
+    console.log(box_size);
+
+    BAR_GAP = box_size/2.5;
+
+    var groupHeight = box_size;
+
+    var height = ((box_size + BAR_GAP) * numGroups) - BAR_GAP + BAR_GAP_INNER;
 
     var x = d3.scale.linear()
         .domain([0,100])
@@ -167,7 +173,6 @@ var drawGraph = function(graphicWidth) {
             .data(Object.keys(legend_labels))
         .enter().append('li')
             .attr('class', function(d, i) {
-                console.log('test');
                 return 'key-item key-' + i + ' ' + classify(d);
             });
     legend.append('b')
@@ -179,7 +184,6 @@ var drawGraph = function(graphicWidth) {
         });
     legend.append('label')
         .text(function(d) {
-            console.log(d);
             return d;
         });
 
@@ -211,15 +215,15 @@ var drawGraph = function(graphicWidth) {
     barGroup.selectAll('rect')
         .data(function(d) { return d['value']; })
         .enter().append('rect')
-            .attr('height', SIZE)
+            .attr('height', box_size)
             .attr('x', function(d, i) {
-                return (SIZE + HORIZONTAL_GAP) * i;
+                return (box_size + HORIZONTAL_GAP) * i;
             })
             .attr('y', function(d, i) {
                 return 0;
             })
             .attr('width', function(d) {
-                return SIZE;
+                return box_size;
             })
             .style('fill', function(d) {
             	return cb[colors[d['amt']]];
@@ -252,7 +256,7 @@ var drawGraph = function(graphicWidth) {
             .attr('style', function(d,i) {
                 var s = '';
                 s += 'width: ' + (margin['left'] - 40) + 'px; ';
-                s += 'height: ' + SIZE + 'px; ';
+                s += 'height: ' + box_size + 'px; ';
                 s += 'left: ' + 0 + 'px; ';
 
                 if (i == 0) {
@@ -281,9 +285,9 @@ var drawGraph = function(graphicWidth) {
             .attr('style', function(d,i) {
                 var s = '';
                 //s += 'width: ' + (margin['left']) + 'px; ';
-                s += 'width: ' + SIZE + 'px; ';
-                s += 'height: ' + SIZE + 'px; ';
-                s += 'left: ' + (LABEL_WIDTH + 5 + ((SIZE + HORIZONTAL_GAP) * (i))) + 'px; ';
+                s += 'width: ' + box_size + 'px; ';
+                s += 'height: ' + box_size + 'px; ';
+                s += 'left: ' + (LABEL_WIDTH + 5 + ((box_size + HORIZONTAL_GAP) * (i))) + 'px; ';
                 s += 'top: 0px; ';
 
                 return s;
