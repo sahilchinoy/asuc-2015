@@ -1,4 +1,10 @@
 @media (min-width: 992px) {
+
+	.intro {
+	padding-left:100px;
+	padding-right: 100px;
+}
+
     .vdown {
         margin-top:38px;
     }
