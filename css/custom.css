@@ -1,3 +1,22 @@
+ul.share-buttons{
+  list-style: none;
+  margin-top: 10px;
+}
+
+ul.share-buttons li{
+  display: inline;
+}
+
+.share-buttons a {
+	color: #000;
+}
+
+.share-buttons a:hover {
+	color: #337ab7;
+	-webkit-transition:.1s;transition:.1s;
+}
+
+
 @media (min-width: 992px) {
 
 	.intro {
