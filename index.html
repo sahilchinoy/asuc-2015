@@ -1,80 +1,122 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <title>Election Survey | The Daily Californian</title>
 
-    <title>Election Survey 2015 | The Daily Californian</title>
+    <link rel="publisher" href="http://plus.google.com/106924542694828305617/"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Party demographics | DC Voter Survey 2015"/>
+    <meta property="og:description" content="Results of The Daily Californian&rsquo;s 2015 ASUC voter survey show demographic trends in political party affiliation, campus issues and ASUC approval."/>
+    <meta property="og:url" content="http://www.votersurvey.dailycal.org/2015"/>
+    <meta property="og:site_name" content="The Daily Californian"/>
+    <meta property="og:image" content="http://i0.wp.com/www.dailycal.org/assets/uploads/2014/04/fbimage1410x738.png"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:description" content="Results of the Daily Californian's 2015 ASUC voter survey show demographic trends in political party affiliation, campus issues and ASUC approval."/>
+    <meta name="twitter:title" content="Party demographics | DC Voter Survey 2015"/>
+    <meta name="twitter:site" content="@dailycal"/>
+    <meta name="twitter:domain" content="The Daily Californian"/>
+    <meta name="twitter:image:src" content="http://i0.wp.com/www.dailycal.org/assets/uploads/2014/04/fbimage1410x738.png"/>
+    <meta name="twitter:creator" content="@dailycal"/>  
 
-    <!-- Bootstrap core CSS -->
+    <link rel='apple-touch-icon' href='http://www.dailycal.org/assets/uploads/2015/04/apple_icon.png'/>
+    <link rel='shortcut icon' href='http://www.dailycal.org/assets/uploads/2012/02/favicon.png'/>
+
+    <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
 
-    <!-- Custom styles for this template -->
-    <link href="css/cover.css" rel="stylesheet">
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+      fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+    </script>
   </head>
-
   <body>
 
-    <div class="site-wrapper">
-
-      <div class="site-wrapper-inner">
-
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
-
-          <div class="masthead clearfix">
-            <div class="inner">
-              <img style="width: 600px; margin-top:50px;"src="logo.png"></img>
+            <div class="navbar-header">
+                <ul class="nav navbar-nav">
+                <li class="hidden-xs"><a href="http://www.dailycal.org/"><img src="logo.png" style="width:200px; margin-top: -5px; margin-right:0px"></a></li>
+                <li class="navbar-shift dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="color:black"><strong>Voter Survey 2015 <span class="caret"></span></strong></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li class="active"><a href="index.html">Introduction</a></li>
+                    <li><a href="candidates.html">Candidates & campaigning</a></li>
+                    <li><a href="issues.html">Campus & university issues</a></li>
+                    <li><a href="asuc.html">ASUC approval</a></li>
+                    <li><a href="party.html">Party demographics</a></li>
+                    <li><a href="survey.html">Full survey</a></li>
+                </ul>
+                </li>
+                </ul>
             </div>
-          </div>
 
-            <div class="col-md-6">
-              <div id="cover-chart"></div>
-            </div>
-            <div class="col-md-6">
-            <h1 class="cover-heading"><strong>Voter Survey 2015</strong></h1>
-            <p class="">BY <a>SAHIL CHINOY</a> AND <a>CHLOEE WEINER</a></p>
+        <div id="navbar" class="navbar-collapse collapse">
 
-            </p>
-          </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li style="margin-top:15px;"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://votersurvey.dailycal.org/2015" data-text="Voter Survey 2015 | The Daily Californian" data-via="dailycal" data-hashtags="votersurvey">Tweet</a></li>
 
-          <div class="col-md-12">
-            <ul class="nav nav-pills">
-  <li role="presentation" class="active"><a href="#">Introduction</a></li>
-  <li role="presentation"><a href="candidates.html">Candidates & campaign methods</a></li>
-  <li role="presentation"><a href="issues.html">Campus & university issues</a></li>
-  <li role="presentation"><a href="asuc.html">ASUC approval</a></li>
-  <li role="presentation"><a href="demographics.html">Party demographics</a></li>
-  <li role="presentation"><a href="survey.html">Full survey</a></li>
-</ul>
-          </div>
-
-          <div class="mastfoot">
-            <div class="inner">
-              <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-            </div>
-          </div>
-
+            <li style="margin-top:15px;"><div class="fb-like" data-href="http://www.votersurvey.dailycal.org/2015" data-layout="button_count" data-action="recommend" data-show-faces="false" data-share="false"></div></li>
+            
+          </ul>
+        </div><!--/.nav-collapse -->
         </div>
+    </nav>
 
-      </div>
+    <div class="container">
+
+    <div class="col-md-12">
+        <h1 class="text-center">Voter Survey 2015: Results</h1>
+        <p>Intro text here</p>
+
+        In the climax of last week’s ASUC tabulation ceremony in Wheeler Auditorium, deafening cheers erupted from one side of the room as CalSERVE swept all four partisan executive seats for the first time since 2008.
+
+The other side of the room, filled by Student Action supporters, celebrated its seven senators-elect — but was noticeably quieter. To the party, which ran candidates for all but one partisan executive position, the results may have been somewhat mystifying.
+
+In a political system in which one quarter of the electorate changes yearly, public opinion is volatile and party lines are indistinct. It’s not clear how each of the 12,000 voters in this year’s election came to their final decision, though rumors and myths abound: enough Facebook likes guarantee a spot in the senate, Student Action relies on the Greek system for support, CalSERVE’s platforms aren’t tangible enough for some students.
+
+As ballots were cast earlier this month, the Daily Californian conducted its first voter survey to better understand the unseen motives and patterns behind voting behavior. We asked respondents to answer questions about candidates and campus issues, using their demographic information to examine which of the popular speculations are based in fact. 
+
+More than 600 students representing a wide range of campus constituencies took the survey, providing a look into the issues, parties and candidates that resonate with various segments of the student body. 
+
+We found that much of the ASUC party mythology is based in fact — individuals who identified with Student Action were more likely to be white, male and part of the Greek community, for example, and people who identified with CalSERVE represented to a greater degree the LGBTIQQA and first-generation populations.
+
+*LGBT chart*
+
+There were also findings that surprised us. Although Student Action has traditionally represented the engineering community, we found that engineers were less likely than average to identify with the party. And when the votes were tallied Thursday, the number-one and number-two ranked senate candidates were CalSERVE engineers.
+
+*Major chart*
+
+We also examined the executive candidates and their methods of campaigning. Milad Razavi, who ran for the presidency with Student Action, failed to capture his party’s vote to the same degree as his main competitor, Yordanos Dejen of CalSERVE — which could explain the 1,400-vote gap when the results were tallied. Overall, we found that Student Action’s supporters were more willing to rank Dejen higher than CalSERVE’s supporters ranked Razavi.
+
+*yordanos milad parties*
+
+In addition, we found that CalSERVE was more successful across the board with online campaign materials, while Student Action’s candidates won more support from friends and in-person campaigning.
+
+Examining the current student government, we asked whether students thought the ASUC should shift its attention towards campus or international issues — finding that the overwhelming majority of students preferred the former. 
+
+*ASUC shift focus chart*
+
+Finally, we looked into which campus issues, many of which were drawn from candidates’ platforms, are prioritized by the student body. We found that tuition and fees and academic experience were regarded as important by most groups; divestment was almost universally ranked as each group’s lowest priority. Priorities also varied within communities — while females in Greek life ranked sexual assault as their foremost priority, males ranked it fifth.
+
+The LGBTQ community was particularly concerned about sexual assault: over half of respondents who 
+    </div>
+
+    
 
     </div>
     <script src="lib/pym.js" type="text/javascript"></script>
@@ -82,20 +124,75 @@
 
     $(function() {
         var pymParent = new pym.Parent(
-            'cover-chart',
-            './cover-chart/cover-chart.html',
+            'Q1-4-candidate',
+            'charts/Q1-4-candidate/Q1-4-candidate.html',
             {}
         );
     });
 
-    </script>
+    $(function() {
+        var pymParent = new pym.Parent(
+            'Q1-3-party',
+            'charts/Q1-3-party/Q1-3-party.html',
+            {}
+        );
+    });
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="lib/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    $(function() {
+        var pymParent = new pym.Parent(
+            'Q1-3-political',
+            'charts/Q1-3-political/Q1-3-political.html',
+            {}
+        );
+    });
+
+    $(function() {
+        var pymParent = new pym.Parent(
+            'Q1-5-party',
+            'charts/Q1-5-party/Q1-5-party.html',
+            {}
+        );
+    });
+
+    $(function() {
+        var pymParent = new pym.Parent(
+            'Q1-7-party',
+            'charts/Q1-7-party/Q1-7-party.html',
+            {}
+        );
+    });
+
+    $(function() {
+        var pymParent = new pym.Parent(
+            'Q1-9-party',
+            'charts/Q1-9-party/Q1-9-party.html',
+            {}
+        );
+    });
+
+    $(function() {
+        var pymParent = new pym.Parent(
+            'Q1-6-candidate',
+            'charts/Q1-6-candidate/Q1-6-candidate.html',
+            {}
+        );
+    });
+
+    $(function() {
+        var pymParent = new pym.Parent(
+            'Q1-8-candidate',
+            'charts/Q1-8-candidate/Q1-8-candidate.html',
+            {}
+        );
+    });
+
+
+
+</script>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
   </body>
 </html>
