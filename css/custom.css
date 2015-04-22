@@ -1,6 +1,7 @@
 ul.share-buttons{
   list-style: none;
   margin-top: 10px;
+  margin-right:50px;
 }
 
 ul.share-buttons li{
